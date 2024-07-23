@@ -1,5 +1,5 @@
 # Use an official OpenJDK runtime as a parent image
-FROM openjdk:11-jre-slim
+FROM openjdk:17-slim
 
 # The application's jar file
 ARG JAR_FILE=target/*.jar
@@ -11,4 +11,4 @@ COPY ${JAR_FILE} app.jar
 EXPOSE 8081
 
 # Run the jar file
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java", "-jar", "/app.jar"]
