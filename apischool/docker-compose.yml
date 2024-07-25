@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Pandemik@76"
+    ports:
+      - "1433:1433"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:sqlserver://host.docker.internal:1433;databaseName=SCHOOLAPPDB;trustServerCertificate=true
+      SPRING_DATASOURCE_USERNAME: Spurgeon
+      SPRING_DATASOURCE_PASSWORD: Pandemik@76

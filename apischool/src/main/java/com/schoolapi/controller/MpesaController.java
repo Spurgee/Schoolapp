@@ -27,7 +27,7 @@ public class MpesaController {
     private final String passKey = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
     private final String accessTokenUrl = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
     private final String paymentUrl = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest";
-    private final String callbackUrl = "https://f1f9-105-29-165-226.ngrok-free.app/api/online-payment/callback";
+    private final String callbackUrl = "https://schoolapp-2.onrender.com/api/online-payment/callback";
 
     private OkHttpClient client = new OkHttpClient();
 
@@ -53,7 +53,6 @@ public class MpesaController {
             }
         }
     }
-
 
     @PostMapping("/pay")
     public ResponseEntity<String> initiatePayment(@org.springframework.web.bind.annotation.RequestBody PaymentRequest paymentRequest) {
@@ -113,9 +112,6 @@ public class MpesaController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
-
-
-
 
     @PostMapping("/callback")
     public ResponseEntity<String> paymentCallback(@org.springframework.web.bind.annotation.RequestBody PaymentCallback paymentCallback) {
