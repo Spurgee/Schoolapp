@@ -16,6 +16,6 @@ services:
     ports:
       - "8081:8081"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:sqlserver://host.docker.internal:1433;databaseName=SCHOOLAPPDB;trustServerCertificate=true
+      SPRING_DATASOURCE_URL: jdbc:sqlserver://sqlserver:1433;databaseName=SCHOOLAPPDB;trustServerCertificate=true
       SPRING_DATASOURCE_USERNAME: Spurgeon
       SPRING_DATASOURCE_PASSWORD: Pandemik@76
