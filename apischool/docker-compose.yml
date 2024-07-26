@@ -8,6 +8,8 @@ services:
       SA_PASSWORD: "Pandemik@76"
     ports:
       - "1433:1433"
+    networks:
+      - my-network
 
   app:
     build:
@@ -15,5 +17,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8081:8081"
+    depends_on:
+      - sqlserver
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
 
 
