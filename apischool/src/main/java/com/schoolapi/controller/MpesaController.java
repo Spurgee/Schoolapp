@@ -27,7 +27,7 @@ public class MpesaController {
     private final String passKey = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
     private final String accessTokenUrl = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
     private final String paymentUrl = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest";
-    private final String callbackUrl = "https://schoolapp-2.onrender.com/api/online-payment/callback";
+    private final String callbackUrl = "https://schoolapp-vory.onrender.com/api/online-payment/callback";
 
     private OkHttpClient client = new OkHttpClient();
 
